@@ -19,6 +19,6 @@ If a display doesn't exists, a new one will be created
 img = Image('lenna')
 img.show()
 ```
-> Image Created
->  
++ Image Created
++ A display is created, and the image is shown by calling `display.showImage()`
 
