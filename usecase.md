@@ -20,5 +20,5 @@ img = Image('lenna')
 img.show()
 ```
 > Image Created
-> 
+>  
 
