@@ -243,6 +243,24 @@ class Display:
         
         >>> img = Image("lenna")
         >>> disp = Display((512,512))
-        >>> disp.writeFrame(img)
-
+        >>> disp.showImage(img)
+        """
+    @abstractmethod
+    def close(self):
+        """
+        **SUMMARY**
+        
+        Closes the display window
+        
+        **RETURNS**
+        
+        Nothing.
+        
+        **EXAMPLE**
+        
+        >>> img = Image("lenna")
+        >>> disp = Display((512,512))
+        >>> disp.showImage(img)
+        >>> disp.close()
+        """
 
