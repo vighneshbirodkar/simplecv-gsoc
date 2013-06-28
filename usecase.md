@@ -31,7 +31,7 @@ img.show()
 + Image Created
 + A **DrawingLayerXYZ** is created and inserted into the image's drawing layer stack if one doesnt exist
 + `drawingLayer.drawCircle((10,10),5)` is called
-+ A **DisplayXYZ** is created, and the image is shown by calling `display.showImage()`. DisplayXYZ knows how to draw things in a DrawingLayerXYZ
++ A **DisplayXYZ** is created, and the image is shown by calling `display.showImage()`. **DisplayXYZ** knows how to draw things in a DrawingLayerXYZ
 
 ### 3.Feature Set
 ```python
