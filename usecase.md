@@ -3,7 +3,7 @@ Use Cases
 ```python
 import DisplayXYZ
 ```
-+ This will set DisplayXYZ, LayerXYZ as the default Display and DrawingLayer classes for all future calls.
++ This will set DisplayXYZ, DrawingLayerXYZ as the default Display and DrawingLayer classes for all future calls.
 
 ```python
 img.show()
@@ -45,5 +45,19 @@ img.show()
 + **DrawingLayerXYZ** is created is none exists and pushed into stack.
 + `fs` is drawn on by `drawingLayer.draw*`
 + A **DisplayXYZ** is created, and the image is shown by calling `display.showImage()`.
+
+### 4.Applying Layers
+```python
+img = Image('lenna')
+img.drawCircle((10,10),5)
+drawing = img.applyLayers()
+drawing.save('new.jpg')
+```
++ Image created 
++ A **DrawingLayerXYZ** is created and inserted into the image's drawing layer stack if one doesnt exist
++ `drawingLayer.drawCircle((10,10),5)` is called
++ `applyLayers` iterated through drawing layers forming a bitmap specific to **XYZLib**
++ SimpleCV image object is retuned (most probably by calling `toString()` internally)
++ Image saved
 
 
