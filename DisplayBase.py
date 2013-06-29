@@ -85,6 +85,7 @@ class Display:
         self.imgSize = None
         self.xScale = 1.0
         self.yScale = 1.0
+        self.image = None
         
     
     def __repr__(self):
@@ -225,7 +226,7 @@ class Display:
         """
         
     @abstractmethod
-    def showImage(self, img):
+    def showImage(self, image):
         """
         **SUMMARY**
         
@@ -233,7 +234,7 @@ class Display:
         
         **PARAMETERS**
         
-        * *img* -  the SimpleCV image to save to the display.
+        * *image* -  the SimpleCV image to save to the display.
         
         **RETURNS**
         
@@ -245,6 +246,9 @@ class Display:
         >>> disp = Display((512,512))
         >>> disp.showImage(img)
         """
+        
+        self.image = img
+        
     @abstractmethod
     def close(self):
         """
