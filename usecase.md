@@ -82,7 +82,17 @@ img.show()
 + A **DisplayNB** is created, it initializes a web server to serve SimpleCV images seperately, on a different port than the IPy Notebook. Each DisplayNB has a unique URL(mostly derived from `id()`) off which it serves images.
 + When `display.showImage()` is called, it injects Javascript into the Notebook to pop a widnow, and point to the URL
 
-
+### 2.Drawing things
+```python
+img = Image('lenna')
+img.drawCircle((10,10),5)
+img.show()
+```
++ Image Created
++ A **DrawingLayerNB** is created and inserted into the image's drawing layer stack if one doesnt exist
++ `drawingLayer.drawCircle((10,10),5)` is called, which also stored a vector representaion of the figure in the Layer.
++ `display.showImage()`t injects Javascript into the Notebook to pop a widnow. 
++ For all the layers present, appropriate processing code is inserted into the window. This way, if the user draws something else, only the drawing code is reloaded (image and js are cached)
 
 
 
