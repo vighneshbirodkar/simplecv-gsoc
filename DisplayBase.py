@@ -1,4 +1,10 @@
-from abc import ABCMeta,abstractmethod
+from abc import ABCMeta,abstractmethod,abstractproperty
+
+class DisplayNotFoundException(Exception):
+    def __init__(self,display):
+        self.display = display
+    def __str__(self):
+        return "Holy heck !! The display at %d was closed, choose a different one" % id(self.display)
 
 
 class Display:
@@ -230,7 +236,8 @@ class Display:
         """
         **SUMMARY**
         
-        Shows the Image given on the Display
+        Shows the Image given on the Display. This method may raise a 
+        DisplayNotFoundException if the display desired was closed
         
         **PARAMETERS**
         
@@ -267,4 +274,6 @@ class Display:
         >>> disp.showImage(img)
         >>> disp.close()
         """
+        if(screen == self):
+            screen = None
 

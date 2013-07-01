@@ -67,8 +67,24 @@ d = DisplayXYZ((640,480))
 d.leftMouse()
 ```
 + Display Created
-+ **LibXYZ** cateched the event and assigns the position `(x,y)` to a local variable
++ **LibXYZ** cateches the event and assigns the position `(x,y)` to a local variable
 + `leftMouse()` returns `(x,y)`
+
+Use Cases - Notebook
+====================
+
+### 1.Bare Minimum
+```python
+img = Image('lenna')
+img.show()
+```
++ Image Created
++ A **DisplayNB** is created, it initializes a web server to serve SimpleCV images seperately, on a different port than the IPy Notebook. Each DisplayNB has a unique URL(mostly derived from `id()`) off which it serves images.
++ When `display.showImage()` is called, it injects Javascript into the Notebook to pop a widnow, and point to the URL
+
+
+
+
 
 
 
