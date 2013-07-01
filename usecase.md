@@ -12,7 +12,7 @@ Can be mapped to
 ```python
 img.save(display)
 ```
-If a display doesn't exists, a new one will be created
+If a display doesn't exists, a new one will be created. The display always containt a pointer to the current Image being shown
 
 ### 1.Bare Minimum
 ```python
@@ -30,7 +30,7 @@ img.show()
 ```
 + Image Created
 + A **DrawingLayerXYZ** is created and inserted into the image's drawing layer stack if one doesnt exist
-+ `drawingLayer.drawCircle((10,10),5)` is called
++ `drawingLayer.drawCircle((10,10),5)` is called, which also stored a vector representaion of the figure in the Layer
 + A **DisplayXYZ** is created, and the image is shown by calling `display.showImage()`. **DisplayXYZ** knows how to draw things in a DrawingLayerXYZ
 
 ### 3.Feature Set
@@ -43,7 +43,7 @@ img.show()
 + Image Created
 + Feature Set formed
 + **DrawingLayerXYZ** is created is none exists and pushed into stack.
-+ `fs` is drawn on by `drawingLayer.draw*`
++ `fs` is drawn on by `drawingLayer.draw*`, which also stored a vector representaions of the figure in the Layer
 + A **DisplayXYZ** is created, and the image is shown by calling `display.showImage()`.
 
 ### 4.Applying Layers
@@ -55,9 +55,21 @@ drawing.save('new.jpg')
 ```
 + Image created 
 + A **DrawingLayerXYZ** is created and inserted into the image's drawing layer stack if one doesnt exist
-+ `drawingLayer.drawCircle((10,10),5)` is called
++ `drawingLayer.drawCircle((10,10),5)` is called, which also stored a vector representaion of the figure in the Layer
 + `applyLayers` iterated through drawing layers forming a bitmap specific to **XYZLib**
 + SimpleCV image object is retuned (most probably by calling `toString()` internally)
 + Image saved
+
+### 5.Events
+```python
+d = DisplayXYZ((640,480))
+#user clicks
+d.leftMouse()
+```
++ Display Created
++ **LibXYZ** cateched the event and assigns the position `(x,y)` to a local variable
++ `leftMouse()` returns `(x,y)`
+
+
 
 
