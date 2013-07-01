@@ -82,6 +82,7 @@ img.show()
 + A **DisplayNB** is created, it initializes a web server to serve SimpleCV images seperately, on a different port than the IPy Notebook. Each Image displayed on DIsplayNB has a unique URL(mostly derived from `id()`) off which it serves images.
 + Image Class should have a dirty bit, to know if the user changes data manually
 + When `display.showImage()` is called, it injects Javascript into the Notebook to pop a widnow, and point to the URL
++ The JS to be inserted will be a well defined template which will contain all the code nexessary to catch events and communicate the the Python kernel.
 
 ### 2.Drawing things
 ```python
