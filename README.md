@@ -5,3 +5,9 @@ Base Class UML
 ==============
 This may not be syntactically correct, but it gives a rough idea of how things will work
 
+![alt text](https://raw.github.com/vighneshbirodkar/simplecv-gsoc/master/BaseClassUML.png "UML")
+
+Legend
+======
+
+![alt text](https://raw.github.com/vighneshbirodkar/simplecv-gsoc/master/Legend.png "UML")
