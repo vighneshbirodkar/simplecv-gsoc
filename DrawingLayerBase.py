@@ -15,6 +15,7 @@ class DrawingLayer:
     _fontName = ""
     _fontSize = 0
     _defaultAlpha = 255
+    _defaultfont = 
     width = 0
     height = 0
 
@@ -207,7 +208,7 @@ class DrawingLayer:
         """
     
     @abstractmethod
-    def text(self, text, location, color = Color.DEFAULT, alpha = -1):
+    def text(self, text, location, color = Color.DEFAULT, font = _defaultfont, size = 20, underline = False, bold= False, italics = False, alpha = -1):
         """
         Write the a text string at a given location
 
@@ -217,6 +218,8 @@ class DrawingLayer:
 
         color - Color object or Color Tuple
 
+        font - The font to be used
+
         alpha - The alpha blending for the object. If this value is -1 then the
                 layer default value is used. A value of 255 means opaque, while 0
                 means transparent.
@@ -224,46 +227,10 @@ class DrawingLayer:
         """
     
     @abstractmethod
-    def setFontBold(self, doBold):
-        """
-        This method sets and unsets the current font to be bold.
-        """
-        
-    @abstractmethod
-    def setFontItalic(self, doItalic):
-        """
-        This method sets and unsets the current font to be italic.
-        """
-        
-    @abstractmethod
-    def setFontUnderline(self, doUnderline):
-        """
-        This method sets and unsets the current font to be underlined
-        """
-       
-    @abstractmethod
-    def selectFont(self, fontName):
-        """
-        This method attempts to set the font from a font file. It is advisable
-        to use one of the fonts listed by the listFonts() method. The input
-        is a string with the font name.
-        """
-        
-    @abstractmethod
     def listFonts(self):
         """
         This method returns a list of strings corresponding to the fonts available
         on the current system.
-        """
-
-    @abstractmethod
-    def setFontSize(self, sz):
-        """
-        This method sets the font size roughly in points. A size of 10 is almost
-        too small to read. A size of 20 is roughly 10 pixels high and a good choice.
-
-        Parameters:
-            sz = Int
         """
 
     @abstractmethod
